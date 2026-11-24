@@ -1,0 +1,6 @@
+{
+  "name": "AIGAMERIA",
+  "description": "A sleek, text-first gaming social community for squad chat, game clubs, verified achievements, and local network bridging.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

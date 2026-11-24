@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A1035" />
+      <stop offset="55%" stop-color="#0D091A" />
+      <stop offset="100%" stop-color="#140B29" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="50%" stop-color="#FF3E8A" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="52%" stop-color="#FFE3D3" />
+      <stop offset="100%" stop-color="#67E8F9" />
+    </linearGradient>
+    <radialGradient id="sunsetGlow" cx="50%" cy="62%" r="48%">
+      <stop offset="0%" stop-color="#FF3E8A" stop-opacity="0.32" />
+      <stop offset="55%" stop-color="#FF6B35" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#0D091A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" />
+  <rect width="512" height="512" rx="112" fill="url(#sunsetGlow)" />
+  <rect x="28" y="28" width="456" height="456" rx="92" fill="none" stroke="url(#ringGrad)" stroke-width="18" />
+  <path d="M256 118 L374 388 L314 388 L289 326 L223 326 L198 388 L138 388 Z M256 190 L238 278 L274 278 Z" fill="url(#letterGrad)" fill-rule="evenodd" />
+  <rect x="192" y="416" width="128" height="10" rx="5" fill="url(#ringGrad)" />
+</svg>

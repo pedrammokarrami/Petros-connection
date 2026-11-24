@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E123D" />
+      <stop offset="55%" stop-color="#0D091A" />
+      <stop offset="100%" stop-color="#160C2E" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B35" />
+      <stop offset="50%" stop-color="#FF3E8A" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+    <linearGradient id="letterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="52%" stop-color="#FFE3D3" />
+      <stop offset="100%" stop-color="#67E8F9" />
+    </linearGradient>
+    <radialGradient id="sunsetGlow" cx="50%" cy="55%" r="44%">
+      <stop offset="0%" stop-color="#FF3E8A" stop-opacity="0.34" />
+      <stop offset="55%" stop-color="#FF6B35" stop-opacity="0.16" />
+      <stop offset="100%" stop-color="#0D091A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <!-- Full-bleed solid/gradient background for Android maskable safe zone (15% margin on all sides) -->
+  <rect width="512" height="512" fill="url(#bgGrad)" />
+  <rect width="512" height="512" fill="url(#sunsetGlow)" />
+  <!-- Core monogram strictly within central 70% safe zone (76..436) -->
+  <rect x="86" y="86" width="340" height="340" rx="76" fill="#120B24" stroke="url(#ringGrad)" stroke-width="14" />
+  <path d="M256 154 L344 352 L298 352 L280 306 L232 306 L214 352 L168 352 Z M256 208 L242 272 L270 272 Z" fill="url(#letterGrad)" fill-rule="evenodd" />
+  <rect x="206" y="372" width="100" height="8" rx="4" fill="url(#ringGrad)" />
+</svg>

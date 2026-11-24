@@ -1,0 +1,42 @@
+services:
+  aigameria-node:
+    build: .
+    container_name: aigameria-personal-node
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+      - "41234:41234/udp"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - SQLITE_DB_PATH=/data/node-meta.sqlite
+    volumes:
+      - aigameria_node_meta:/data
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/api/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  # Optional free self-hosted STUN/TURN relay for peers behind strict symmetric NAT
+  # Enable with: docker compose --profile relay up -d
+  coturn:
+    image: coturn/coturn:4.6-alpine
+    container_name: aigameria-coturn
+    profiles: ["relay"]
+    restart: unless-stopped
+    network_mode: host
+    command:
+      - "-n"
+      - "--log-file=stdout"
+      - "--use-auth-secret"
+      - "--static-auth-secret=${TURN_SECRET:-change-me-turn-secret}"
+      - "--realm=${TURN_REALM:-aigameria.local}"
+      - "--listening-port=3478"
+      - "--min-port=49160"
+      - "--max-port=49200"
+
+volumes:
+  aigameria_node_meta:
